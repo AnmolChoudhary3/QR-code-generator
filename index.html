@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Assets/favicon-16x16.png">
+    <link rel="manifest" href="./Assets/site.webmanifest">
+    <script src="script.js" defer></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+    integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    ></script>
+</head>
+<body>
+    <header>
+        <h1>QR Code</h1>
+        <h2>Generator</h2>
+    </header>
+    <form id="form">
+        <input id="url" required type="url" placeholder="Enter the url">
+        <div class="option-wrapper">
+            <div id="swatch">
+                <input type="color" name="f-color" id="f-color" value="#000000" >
+                <div class="info">
+                  <h1>Foreground</h1>
+                  <h2>Color</h2>
+                </div>
+            </div>
+            <div id="swatch">
+                <input type="color" name="b-color" id="b-color" value="#ffffff" >
+                <div class="info">
+                  <h1>Background</h1>
+                  <h2>Color</h2>
+                </div>
+            </div>
+            <select id="size">
+                <option value="100">100x100</option>
+                <option value="200">200x200</option>
+                <option value="300" selected>300x300</option>
+                <option value="400">400x400</option>
+                <option value="500">500x500</option>
+                <option value="600">600x600</option>
+                <option value="700">700x700</option>
+            </select>
+        </div>
+        <div class="result-wrapper">
+            <div class="button-wrapper">
+                <button type="submit">Generate</button>
+                <p id="down"></p>
+            </div>
+            <div id="qrcode"></div>
+        </div>
+    </form>
+    <img id="cover" src="./Assets/cover.png">
+</body>
+</html>
